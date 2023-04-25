@@ -1,0 +1,83 @@
+create table CAFE(
+    Cafe_ID number not null,
+    Cafe_Location varchar2(50) not null,
+    Cafe_Phone number,
+    Cafe_RMan varchar2(50),
+    constraint pk_cafe primary key
+    (Cafe_ID)
+);
+create table MANAGER(
+    Emp_ID number not null,
+    Cafe_ID number not null,
+    Emp_Name varchar2(50),
+    Emp_Phone number,
+    Emp_Email varchar2(100),
+    constraint pk_manager primary key
+    (Emp_ID),
+    constraint fk_cafeID foreign key (Cafe_ID) references CAFE(Cafe_ID)
+);
+
+create table BARISTA(
+    Emp_ID number not null,
+    Cafe_ID number not null,
+    Emp_Name varchar2(50),
+    Emp_Phone number,
+    Emp_Email varchar2(100),
+    constraint pk_BarID primary key
+    (Emp_ID),
+    constraint fk_Bar_Cafe_ID foreign key (Cafe_ID) references CAFE(Cafe_ID)
+);
+create table CASHIER(
+    Emp_ID number not null,
+    Cafe_ID number not null,
+    Emp_Name varchar2(50),
+Emp_Phone number,
+    Emp_Email varchar2(100),
+    constraint pk_Cashy primary key
+    (Emp_ID),
+    constraint fk_Cash_cafe_ID foreign key (Cafe_ID) references CAFE(Cafe_ID)
+);
+create table CUSTOMER(
+    Cus_ID number not null,
+    Cus_Name varchar2(50),
+    Cus_Phone number,
+    Cus_Address varchar2(50),
+    constraint pk_cus primary key
+    (Cus_ID)
+);
+create table PAYMENT(
+    Payment_Num number not null, 
+	Cus_ID number not null, 
+    Sub_Total number,
+    Total number,
+    Tip number,
+    Order_Time varchar2(10),
+    Order_Date Date,
+    constraint pk_Pay primary key
+    (Payment_Num),
+    constraint fk_Cus foreign key
+    (Cus_ID) references CUSTOMER(Cus_ID)
+);
+create table ITEM(
+    Item_Num number not null,
+    Item_Name varchar2(50),
+    Item_Quantity number,
+    Item_Cost number,
+    Description varchar2(200),
+    constraint pk_Item primary key
+    (Item_Num),
+    constraint chk_Item_Quantity check
+    (Item_Quantity > 0)
+);
+create table ORDER_(
+    Order_Num number not null,
+  Item_Num number not null,
+    Order_Quantity number,
+    Order_description varchar2(200),
+    Time_received varchar2(15),
+    time_complete varchar2(15),
+    constraint pk_order primary key
+    (Order_Num),
+    constraint fk_order foreign key
+    (Item_Num) references ITEM(Item_Num)
+);
