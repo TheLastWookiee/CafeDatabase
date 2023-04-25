@@ -1,0 +1,70 @@
+Cafe:
+UPDATE CAFE
+SET Cafe_Phone = 5554321
+WHERE Cafe_ID = 1;
+
+UPDATE CAFE
+SET Cafe_RMan = 'John Doe'
+WHERE Cafe_ID = 2;
+
+Manager:
+UPDATE MANAGER
+SET Emp_Email = 'bob.johnson@cafe.com'
+WHERE Emp_ID = 101;
+
+UPDATE MANAGER
+SET Emp_Phone = 5553334
+WHERE Emp_ID = 103;
+
+Barista:
+UPDATE BARISTA
+SET Emp_Phone = 8134567890
+WHERE Emp_ID = 101 AND Emp_Phone= 7318905461;
+
+UPDATE BARISTA
+SET Emp_Email = 'billybobjohnsonthethirdsonofmabel@yahoo.com'
+WHERE Emp_ID = 102;
+Cashier:
+UPDATE CASHIER
+SET Emp_Email = 'harrypotterlover@yahoo.com'
+WHERE Emp_ID = 105 AND Emp_Phone=7129320329;
+
+UPDATE CASHIER
+SET Emp_Email = 'Johnson@gmail.com'
+WHERE Emp_ID = 105 AND Emp_Name='Johnson Jerald';
+Customer:
+UPDATE CUSTOMER
+SET Cus_Phone = 5554321555
+WHERE Cus_ID = 002;
+
+UPDATE CUSTOMER
+SET Cus_Address = 'ilovecoffee@gmail.com'
+WHERE Cus_ID = 005;
+
+
+Payment:
+UPDATE PAYMENT
+SET Total = '30.00'
+WHERE Cus_ID = 005;
+
+UPDATE PAYMENT
+SET Order_Date = '2023-05-22' 
+WHERE Cus_ID = 009 and Order_Time = '10:19 AM';
+Item:
+UPDATE ITEM
+SET Item_Quantity = 7
+WHERE Cafe_Num = 5;
+
+UPDATE ITEM
+SET Description = 'Yummy Muffin'
+WHERE Item_Name = 'Muffin';
+
+
+Order:
+UPDATE ORDER_
+SET Time_recieved = '3:30 PM' and tim_completed = '4:00 PM'
+WHERE Order_Num = 1003;
+
+UPDATE ORDER_
+SET Time_received = '5:00 AM'
+WHERE time_complete= '4:00 AM' and Item_Num= 5;
