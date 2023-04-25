@@ -1,0 +1,47 @@
+INSERT INTO CAFE (Cafe_ID, Cafe_Location, Cafe_Phone, Cafe_RMan) VALUES (1, '123 Main Street', 5551234, 'John Smith');
+INSERT INTO CAFE (Cafe_ID, Cafe_Location, Cafe_Phone, Cafe_RMan) VALUES (2, '123 Tree Avenue', 5555678, 'Jane Doe');
+INSERT INTO CAFE (Cafe_ID, Cafe_Location, Cafe_Phone, Cafe_RMan) VALUES (3, '123 Bush Avenue', 5555679, 'James Tabasco');
+INSERT INTO CAFE (Cafe_ID, Cafe_Location, Cafe_Phone, Cafe_RMan) VALUES (4, '123 Vine Avenue', 5555680, 'Chris Brown');
+INSERT INTO CAFE (Cafe_ID, Cafe_Location, Cafe_Phone, Cafe_RMan) VALUES (5, '123  Real Street', 5555681, 'Emily White');
+
+INSERT INTO MANAGER (Emp_ID, Cafe_ID, Emp_Name, Emp_Phone, Emp_Email) VALUES (101, 1, 'Bob Johnson', 5551111, 'bob@cafe.com');
+INSERT INTO MANAGER (Emp_ID, Cafe_ID, Emp_Name, Emp_Phone, Emp_Email) VALUES (102, 2, 'Mary Lee', 5552222, 'mary@cafe.com');
+INSERT INTO MANAGER (Emp_ID, Cafe_ID, Emp_Name, Emp_Phone, Emp_Email) VALUES (103, 3, 'Lisa Chen', 5553333, 'lisachen@cafe.com');
+INSERT INTO MANAGER (Emp_ID, Cafe_ID, Emp_Name, Emp_Phone, Emp_Email) VALUES (104, 4, 'Mark Kim', 5554444, 'markkim@cafe.com');
+INSERT INTO MANAGER (Emp_ID, Cafe_ID, Emp_Name, Emp_Phone, Emp_Email) VALUES (105, 5, 'Emily Davis', 5555555, 'emilydavis@cafe.com');
+
+INSERT INTO BARISTA (Emp_ID, Cafe_ID, Emp_Name, Emp_Phone, Emp_Email) VALUES (201, 1, 'Samantha Brown', 5553332, 'sam@cafe.com');
+INSERT INTO BARISTA (Emp_ID, Cafe_ID, Emp_Name, Emp_Phone, Emp_Email) VALUES (202, 2, 'Tom Jones', 5554442, 'tom@cafe.com');
+INSERT INTO BARISTA (Emp_ID, Cafe_ID, Emp_Name, Emp_Phone, Emp_Email) VALUES (203, 3, 'James Kim', 5553334, 'jameskim@cafe.com');
+INSERT INTO BARISTA (Emp_ID, Cafe_ID, Emp_Name, Emp_Phone, Emp_Email) VALUES (204, 4, 'Grace Lee', 5554445, 'gracelee@cafe.com');
+INSERT INTO BARISTA (Emp_ID, Cafe_ID, Emp_Name, Emp_Phone, Emp_Email) VALUES (205, 5, 'Michael Chen', 5555556, 'michaelchen@cafe.com');
+
+INSERT INTO CASHIER (Emp_ID, Cafe_ID, Emp_Name, Emp_Phone, Emp_Email) VALUES (301, 1, 'Chris Evans', 5555551, 'chris@cafe.com');
+INSERT INTO CASHIER (Emp_ID, Cafe_ID, Emp_Name, Emp_Phone, Emp_Email) VALUES (302, 2, 'Linda Kim', 5556666, 'linda@cafe.com');
+INSERT INTO CASHIER (Emp_ID, Cafe_ID, Emp_Name, Emp_Phone, Emp_Email) VALUES (303, 2, 'Josh Bacon', 5559999, 'Jbacon@cafe.com');
+INSERT INTO CASHIER (Emp_ID, Cafe_ID, Emp_Name, Emp_Phone, Emp_Email) VALUES (404, 2, 'Karen Brown', 5554321, 'karenbrown@cafe.com');
+INSERT INTO CASHIER (Emp_ID, Cafe_ID, Emp_Name, Emp_Phone, Emp_Email) VALUES (505, 3, 'Mike Davis', 5555558, 'mikedavis@cafe.com');
+
+INSERT INTO CUSTOMER (Cus_ID, Cus_Name, Cus_Phone, Cus_Address) VALUES (001, 'Joe Brown', 5557777, 'JBrown@email.com');
+INSERT INTO CUSTOMER (Cus_ID, Cus_Name, Cus_Phone, Cus_Address) VALUES (002, 'Sara Davis', 5558888, 'SADavis@email.com');
+INSERT INTO CUSTOMER (Cus_ID, Cus_Name, Cus_Phone, Cus_Address) VALUES (003, 'Sam Daniels', 5558881, 'SADaniels@email.com');
+INSERT INTO CUSTOMER (Cus_ID, Cus_Name, Cus_Phone, Cus_Address) VALUES (004, 'John Jones', 5558882, 'JJones@email.com');
+INSERT INTO CUSTOMER (Cus_ID, Cus_Name, Cus_Phone, Cus_Address) VALUES (005, 'Rick Pine', 5558885, 'RickyP@email.com');
+
+INSERT INTO PAYMENT (Payment_Num, Cus_ID, Sub_Total, Total, Tip, Order_Time, Order_Date) VALUES (1, 001, 10.99, 13.00, 2.01, '12:30 PM', TO_DATE('2023-04-13', 'YYYY-MM-DD'));
+INSERT INTO PAYMENT (Payment_Num, Cus_ID, Sub_Total, Total, Tip, Order_Time, Order_Date) VALUES (2, 002, 15.50, 18.50, 3.00, '1:45 PM', TO_DATE('2023-04-13', 'YYYY-MM-DD'));
+INSERT INTO PAYMENT (Payment_Num, Cus_ID, Sub_Total, Total, Tip, Order_Time, Order_Date) VALUES (3, 003, 7.98, 10.98, 3.00, '10:25 AM', TO_DATE('2023-04-13', 'YYYY-MM-DD'));
+INSERT INTO PAYMENT (Payment_Num, Cus_ID, Sub_Total, Total, Tip, Order_Time, Order_Date) VALUES (4, 004, 5.29, 8.29, 3.00, '10:35 AM', TO_DATE('2023-04-13', 'YYYY-MM-DD'));
+INSERT INTO PAYMENT (Payment_Num, Cus_ID, Sub_Total, Total, Tip, Order_Time, Order_Date) VALUES (5, 005, 4.59, 6.24, 1.50, '9:30 AM', TO_DATE('2023-04-13', 'YYYY-MM-DD'));
+
+INSERT INTO ITEM (Item_Num, Item_Name, Item_Quantity, Item_Cost, Description) VALUES (1, 'Coffee', 5, 1.99, 'Regular coffee');
+INSERT INTO ITEM (Item_Num, Item_Name, Item_Quantity, Item_Cost, Description) VALUES (2, 'Muffin', 3, 2.50, 'Blueberry muffin');
+INSERT INTO ITEM (Item_Num, Item_Name, Item_Quantity, Item_Cost, Description) VALUES (3, 'Cappuccino', 25, 3.99, 'Espresso with steamed milk and foam');
+INSERT INTO ITEM (Item_Num, Item_Name, Item_Quantity, Item_Cost, Description) VALUES (4, 'Latte', 20, 4.29, 'Espresso with steamed milk');
+INSERT INTO ITEM (Item_Num, Item_Name, Item_Quantity, Item_Cost, Description) VALUES (5, 'Mocha', 15, 4.99, 'Espresso with chocolate and steamed milk');
+
+INSERT INTO ORDER_ (Order_Num, Item_Num, Time_received, time_complete) VALUES (1001, 1, '12:30 PM', '12:40 PM');
+INSERT INTO ORDER_ (Order_Num, Item_Num, Time_received, time_complete) VALUES (1002, 2, '1:45 PM', '1:55 PM');
+INSERT INTO ORDER_ (Order_Num, Item_Num, Time_received, time_complete) VALUES (1003, 3, '10:25 AM', '10:30 AM');
+INSERT INTO ORDER_ (Order_Num, Item_Num, Time_received, time_complete) VALUES (1004, 4, '10:35 AM', '10:40 AM');
+INSERT INTO ORDER_ (Order_Num, Item_Num, Time_received, time_complete) VALUES (1005, 5, '9:30 AM', '9:35 AM');
