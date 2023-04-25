@@ -1,0 +1,47 @@
+/*
+Gets a list of all the customers and their names, 
+ordering by names descending
+*/
+SELECT Cus_ID, Cus_Name
+FROM Customer 
+ORDER BY Cus_Name DESC;
+
+/*
+Gets the total number of orders placed by each customer, 
+ordering by number of orderss descending
+*/
+SELECT Customer.Cus_Name, COUNT(Order.Order_Num) as Num_Orders 
+FROM Customer 
+INNER JOIN Order ON Customers.Cus_ID = Order.Cus_ID 
+GROUP BY Customer.Cus_ID 
+ORDER BY Num_orders DESC;
+
+/*
+Gets a list of all of the customers who dont have orders
+*/
+SELECT Cus_Name 
+FROM Customer 
+LEFT JOIN Order ON Customer.Cus_ID = Order.Cus_ID 
+WHERE Order.Order_Num IS NULL;
+
+/*
+Gets a list of all of the managers, the cafes, 
+and the payments that have been made, ordering by total payments descending
+*/
+SELECT Manager.Emp_ID, Cafe.ID, SUM(Order.Num_Order) as Total_Payments 
+FROM Manager 
+INNER JOIN Cafe ON Manager.Cafe_ID = Cafe.Cafe_ID 
+INNER JOIN Payment ON Manager.Emp_ID = Payment.Emp_ID 
+GROUP BY Manager.Emp_ID, Cafe.Cafe_ID 
+ORDER BY Total_Payments DESC;
+
+/*
+Gets a list of all of the orders and the items on them, 
+as well as the number of orders each item has been in, ordering by number of orders descending
+*/
+SELECT Order.Order_Num, Item.Item_Num, COUNT(Order.Order_ID) as Num_Orders 
+FROM Order
+INNER JOIN Item ON Order.Item_Num = Item.Item_ID 
+INNER JOIN Order_ID ON Order.Order_ID = Order_ID.Item_ID 
+GROUP BY Item.Item_ID, Order.Order_ID 
+ORDER BY Num_Orders DESC;
